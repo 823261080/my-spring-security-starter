@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jwzhang.starter.mapper.SysUser1Mapper">
+
+    <select id="selectListByPage" resultType="com.jwzhang.starter.entity.SysUser1">
+        select * from sch_user c
+        <where>
+            <if test="camera.nickName != null and camera.nickName != ''">and c.nick_name like concat('%',#{user1.nickName},'%')</if>
+        </where>
+    </select>
+</mapper>
